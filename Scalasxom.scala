@@ -40,7 +40,7 @@ object Scalasxom {
 				val files = dirs.head.listFiles.toList
 				_entryFiles(
 					dirs.tail ::: files.filter(_.isDirectory),
-					result    ::: files.filter(!_.isDirectory)
+					result    ::: files.remove(_.isDirectory)
 				)
 			}
 		}
